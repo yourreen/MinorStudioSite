@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MinorStudio — независимая студия разработки игр. Создаём игры, в которые хочется играть.">
+    <title>MinorStudio — Разработка игр</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo" id="logo-home">MS</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#blog">Блог</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-text reveal-left">
+                <h1>Мы создаём игры, <br><span class="gradient-text">в которые хочется играть</span></h1>
+                <p>MinorStudio — независимая студия разработки игр. Мы превращаем идеи в захватывающие миры.</p>
+                <div class="hero-actions">
+                    <a href="https://t.me/minorgamestudio" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Заказать игру</a>
+                    <a href="#projects" class="btn btn-outline">Наши проекты</a>
+                </div>
+            </div>
+            <div class="hero-visual reveal-right">
+                <div class="gamepad-wrapper">
+                    <i class="fa-solid fa-gamepad gamepad-art"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container services-grid">
+                <div class="service-item reveal" style="transition-delay: 0.1s;"><i class="fa-solid fa-gamepad"></i><h4>Разработка игр</h4><p>Полный цикл</p></div>
+                <div class="service-item reveal" style="transition-delay: 0.2s;"><i class="fa-solid fa-code"></i><h4>Программирование</h4><p>Игровые механики</p></div>
+                <div class="service-item reveal" style="transition-delay: 0.3s;"><i class="fa-solid fa-pen-nib"></i><h4>Дизайн и Арт</h4><p>Визуальный стиль</p></div>
+                <div class="service-item reveal" style="transition-delay: 0.4s;"><i class="fa-solid fa-rocket"></i><h4>Поддержка</h4><p>Развитие проектов</p></div>
+            </div>
+        </section>
+
+        <section id="about" class="about container">
+            <div class="about-content">
+                <div class="about-text reveal-left">
+                    <h2>О <span class="gradient-text">студии</span></h2>
+                    <p>MinorStudio — это команда энтузиастов, объединённых любовью к играм. Мы работаем на Unity и Unreal Engine, создавая проекты от мобильных казуалок до серьёзных PC-релизов.</p>
+                    <p>Наш подход: качество, внимание к деталям и постоянная связь с сообществом через девблоги.</p>
+                    <div class="about-stats">
+                        <div class="stat-item"><h3>5+</h3><p>Лет опыта</p></div>
+                        <div class="stat-item"><h3>12</h3><p>Проектов</p></div>
+                        <div class="stat-item"><h3>10k</h3><p>Игроков</p></div>
+                    </div>
+                </div>
+                <div class="hero-visual reveal-right" style="flex: 0.5;">
+                     <div class="gamepad-wrapper">
+                        <i class="fa-solid fa-vr-cardboard gamepad-art" style="font-size: 10rem;"></i>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title reveal">Наши <span class="gradient-text">Проекты</span></h2>
+                
+                <div class="filter-buttons reveal">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="dev">В разработке</button>
+                    <button class="filter-btn" data-filter="released">Вышедшие</button>
+                    <button class="filter-btn" data-filter="closed">Закрытые</button>
+                    <button class="filter-btn" data-filter="soon">Скоро</button>
+                </div>
+
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2 class="section-title reveal">Девблоги и <span class="gradient-text">Новости</span></h2>
+                <div class="blog-grid" id="blog-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="post-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal" aria-label="Закрыть">&times;</button>
+            <span class="blog-date" id="modal-date"></span>
+            <h2 id="modal-title"></h2>
+            <div class="post-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+        <div class="container reveal">
+            <h2>Готовы <span class="gradient-text">заказать игру?</span></h2>
+            <p>Свяжитесь с нами для обсуждения вашего проекта. Мы открыты для сотрудничества!</p>
+            <div class="contact-buttons">
+                <a href="https://t.me/minorgamestudio" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-brands fa-telegram"></i> Написать в Telegram</a>
+                <a href="https://vk.ru/minorstudios" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-brands fa-vk"></i> Написать в VK</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="socials">
+                <a href="https://t.me/minorgamestudio" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://vk.ru/minorstudios" target="_blank" rel="noopener noreferrer" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+                <a href="https://www.youtube.com/@MinorGameStudio" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://discord.gg/mgKGcWyFeg" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            </div>
+            <p>&copy; 2023 MinorStudio. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/projects.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
